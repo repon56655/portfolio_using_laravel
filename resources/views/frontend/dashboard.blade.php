@@ -7,6 +7,7 @@
 
         <meta name="description" content="">
         <meta name="author" content="mdrepon.info">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Md Repon</title>
 
@@ -492,12 +493,13 @@ https://templatemo.com/tm-578-first-portfolio
                             </div>
 
                             <div class="col-lg-6 col-12 mt-5 mt-lg-0" id="form_section">
-                                <form action="{{ route('store') }}" method="POST" class="custom-form contact-form"  role="form">
-                                    @csrf
+                                <div class="custom-form contact-form">
+                             
+                                    <div class="msg"></div>
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-floating">
-                                                <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="">
+                                                <input type="text" name="name" id="name" class="form-control name" placeholder="Name" required="">
                                                 
                                                 <label for="#name">Name</label>
                                             </div>
@@ -505,7 +507,7 @@ https://templatemo.com/tm-578-first-portfolio
 
                                         <div class="col-lg-6 col-md-6 col-12"> 
                                             <div class="form-floating">
-                                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
+                                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control email" placeholder="Email address" required="">
                                                 
                                                 <label for="#email">Email address</label>
                                             </div>
@@ -514,18 +516,18 @@ https://templatemo.com/tm-578-first-portfolio
 
                                         <div class="col-lg-12 col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control" id="message" name="message" placeholder="Tell me about the project"></textarea>
+                                                <textarea class="form-control" id="message" name="message" placeholder="Tell me about the project" class="message"></textarea>
                                                 
                                                 <label for="floatingTextarea">Tell me about the project</label>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-3 col-12 ms-auto">
-                                            <button type="submit" class="form-control">Send</button>
+                                            <button type="submit" class="form-control btn-add">Send</button>
                                         </div>
 
                                     </div>
-                                </form>
+                                </div>
                             </div>
 
                         </div>
@@ -561,6 +563,7 @@ https://templatemo.com/tm-578-first-portfolio
         <script src="{{ asset('Frontend') }}/js/jquery.magnific-popup.min.js"></script>
         <script src="{{ asset('Frontend') }}/js/magnific-popup-options.js"></script>
         <script src="{{ asset('Frontend') }}/js/custom.js"></script>
+        <script src="{{ asset('Frontend') }}/js/myjs.js"></script>
 
     </body>
 </html>

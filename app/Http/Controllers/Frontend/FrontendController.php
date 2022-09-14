@@ -19,9 +19,11 @@ class FrontendController extends Controller
         $data->email = $request->email;
         $data->message = $request->message;
 
-        $data->save();
+        return response()->json([
+            'status'=>'success'
+        ]);
 
-        return redirect()->back();
+       
 
 
     }
